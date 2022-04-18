@@ -2,7 +2,9 @@
     "packages": {
         "main": [
             "python3",
-            "pybind11"
+            "pybind11",
+            "sdl2-mixer[fluidsynth,libflac,libvorbis]"
+            
         ]
     },
     "required_user_toolchain_values": [],
