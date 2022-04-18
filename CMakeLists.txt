@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(test VERSION 0.1.0)
 
-set(TARGET_NAME test)
+set(TARGET_NAME r2d2_runtime)
 
 set(Boost_USE_STATIC_LIBS OFF) 
 set(Boost_USE_MULTITHREADED ON)  
@@ -12,17 +12,8 @@ set (CMAKE_CXX_STANDARD 17)
 
 include_directories(${TRIPLET_INCLUDE_DIRS}) 
 
-# If you're using Boost:
-# find_package(Boost 1.45.0 COMPONENTS filesystem) 
-# if(Boost_FOUND)
-    # include_directories(${Boost_INCLUDE_DIRS}) 
-
-add_executable(${TARGET_NAME} test.cpp)
-# add_library(${TARGET_NAME} SHARED test.cpp)
-# add_library(${TARGET_NAME} test.cpp)
-
-    # target_link_libraries(${TARGET_NAME} ${Boost_LIBRARIES})
-# endif()
+add_executable(${TARGET_NAME})
+add_subdirectory("./src/cpp")
 
 set_target_properties(${TARGET_NAME}
     PROPERTIES
